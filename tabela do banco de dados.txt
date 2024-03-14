@@ -1,0 +1,31 @@
+tabela 
+
+CREATE TABLE Produto (
+    Id_Produto int auto_increment PRIMARY KEY,
+    Nome_Produto VARCHAR(50),
+    Descricao_Produto TEXT,
+    Preco_Produto DECIMAL
+);
+
+CREATE TABLE Cliente (
+    Id_Cliente int auto_increment primary KEY,
+    Nome_Cliente VARCHAR(50),
+    Email_Cliente VARCHAR(50),
+    Telefone_Cliente VARCHAR(11)
+);
+
+CREATE TABLE Pedidos (
+    Id_Pedido int auto_increment PRIMARY KEY,
+    Id_Cliente int,
+    Data_Pedido DATE,
+    Status VARCHAR(20),
+    Nome_Pedido(55),
+    FOREIGN KEY (Id_Cliente) REFERENCES Cliente(Id_Cliente)
+);
+
+
+
+insert into Cliente (Nome_Cliente, Email_Cliente, Telefone_Cliente) values ("maria", "maria@gmail.com", "32555455");
+insert into Produto (Nome_Produto, Descricao_Produto, Preco_Produto) values ("Café Espresso", "Café forte e encorpado", "4.0");
+insert into Pedidos (Data_Pedido, Status) values ("1", "2024/05/02", "Em andamento");     
+
